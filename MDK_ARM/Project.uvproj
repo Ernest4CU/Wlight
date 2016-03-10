@@ -424,6 +424,11 @@
               <FileType>1</FileType>
               <FilePath>..\src\ht32f175x_275x_it.c</FilePath>
             </File>
+            <File>
+              <FileName>Delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\Delay.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
