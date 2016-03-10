@@ -1,5 +1,22 @@
 #include "Delay.h"
 
+
+
+/*********************************************************************************************************//**
+* @brief  Configures GPTM0 for time estimate.
+* @retval None
+***********************************************************************************************************/
+void GPTM_Configuration(void)
+{
+	GPTM_TimeBaseInitTypeDef TimeBaseInit;
+
+	TimeBaseInit.CounterMode = GPTM_CNT_MODE_UP;
+	TimeBaseInit.CounterReload = SystemCoreClock / (1000 * 2);
+	TimeBaseInit.Prescaler = 1;
+	TimeBaseInit.PSCReloadTime = GPTM_PSC_RLD_IMMEDIATE;
+	GPTM_TimeBaseInit(GPTM0, &TimeBaseInit);
+	GPTM_Cmd(GPTM0, ENABLE);
+}
 /*********************************************************************************************************//**
 * @brief  Used to delay x ms.
 * @retval None

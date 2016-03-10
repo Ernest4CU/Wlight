@@ -15,28 +15,7 @@
 #include "Delay.h"
 
 
-void GPTM_Configuration(void);
 
-
-
-
-
-
-/*********************************************************************************************************//**
-* @brief  Configures GPTM0 for time estimate.
-* @retval None
-***********************************************************************************************************/
-void GPTM_Configuration(void)
-{
-	GPTM_TimeBaseInitTypeDef TimeBaseInit;
-
-	TimeBaseInit.CounterMode = GPTM_CNT_MODE_UP;
-	TimeBaseInit.CounterReload = SystemCoreClock / (1000 * 2);
-	TimeBaseInit.Prescaler = 1;
-	TimeBaseInit.PSCReloadTime = GPTM_PSC_RLD_IMMEDIATE;
-	GPTM_TimeBaseInit(GPTM0, &TimeBaseInit);
-	GPTM_Cmd(GPTM0, ENABLE);
-}
 
 
 /** @addtogroup HT32F175x_275x_Peripheral_Examples HT32F175x/275x Peripheral Examples
@@ -101,8 +80,7 @@ int main(void)
   }
 
 	  /* Enable AFIO peripheral clock */
-  CKCU_APBPerip0ClockConfig(CKCU_APBEN0_AFIO, ENABLE);
-	CKCU_APBPerip1ClockConfig(CKCU_APBEN1_OPA0 | CKCU_APBEN1_GPTM0, ENABLE);
+	CKCU_APBPerip1ClockConfig(CKCU_APBEN1_GPTM0, ENABLE);
 	GPTM_Configuration();               /* GPTM configuration */      
 	
   /* Configure LED1, LED2, LED3 pins as output function */
