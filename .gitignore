@@ -1,3 +1,5 @@
 #下面是我的忽略内容
 #gitignore用法是只要包括什么就不对什么进行版本控制
 *.o
+*.Obj
+*.SearchResults
