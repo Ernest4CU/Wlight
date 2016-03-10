@@ -52,5 +52,5 @@ Temporary Items
 
 obj/
 *.d
-MDK_ARM/
 *.map
+MDK_ARM\HT32F1755_2755_DVB\
