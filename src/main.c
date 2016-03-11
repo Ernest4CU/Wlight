@@ -80,6 +80,7 @@ int main(void)
   }
 
 	  /* Enable AFIO peripheral clock */
+	CKCU_APBPerip0ClockConfig(CKCU_APBEN0_AFIO, ENABLE);  //定时器算是AFIO设备
 	CKCU_APBPerip1ClockConfig(CKCU_APBEN1_GPTM0, ENABLE);
 	GPTM_Configuration();               /* GPTM configuration */      
 	
