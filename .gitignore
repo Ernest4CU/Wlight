@@ -54,3 +54,4 @@ obj/
 *.d
 *.map
 MDK_ARM\HT32F1755_2755_DVB\
+*.ICUI4CU
